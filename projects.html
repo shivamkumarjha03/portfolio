@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Shivam Kumar Jha</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+           margin: 0; 
+           padding: 0;
+        }
+        body {
+            background-color: white;
+            color: goldenrod;
+            font-family: 'Poppins', sans-serif;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80px;
+            background-color: rgb(30, 30, 30);
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            list-style: none;
+            margin: 0 23px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: goldenrod;
+        }
+        nav ul li a:hover {
+            color: darkgoldenrod;
+            font-size: 1.05rem;
+        }
+        .left {
+            font-size: 1.5rem;
+        }
+        .projects-section {
+            max-width: 80vw;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        .projects-section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: darkgoldenrod;
+            text-align: center;
+        }
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+        .project-card {
+            background-color: rgb(30, 30, 30);
+            border-radius: 10px;
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        .project-card h2 {
+            color: goldenrod;
+            margin-bottom: 15px;
+        }
+        
+        .project-card p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        .project-card .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .project-card .tech-stack span {
+            background-color: goldenrod;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            color: black;
+        }
+        .project-links {
+            display: flex;
+            gap: 15px;
+        }
+        .project-links a {
+            color: goldenrod;
+            text-decoration: none;
+            padding: 5px 15px;
+            border: 1px solid goldenrod;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .project-links a:hover {
+            background-color: goldenrod;
+            color: black;
+        }
+        footer{
+            background-color: rgb(30, 30, 30);
+            border-radius: 15px;
+            padding: 20px 0;
+        }
+        .footer{
+            display: flex;
+            padding: 20px 122px;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .footer ul{
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0;
+            margin: 0;
+        }
+        .footer ul li{
+            list-style: none;
+            margin: 5px 0;
+        }
+        .footer ul li a{
+            text-decoration: none;
+            color: goldenrod;
+        }
+        .footer ul li a:hover{
+            color: darkgoldenrod;
+            font-size: 1.05rem;
+        }
+        .footer-first h3{
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            line-height: 1.2;
+        }
+        .footer>div{
+            margin: 10px 20px;
+        }
+        footer .footer-rights{
+            text-align: center;
+            color: goldenrod;
+            padding: 12px 0;
+            margin-top: 20px;
+        }
+
+        /* --- Media Queries for Responsiveness --- */
+
+        /* For screens smaller than 768px (e.g., tablets and smaller) */
+        @media screen and (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+                margin-top: 10px;
+                gap: 10px;
+            }
+
+            nav ul li {
+                margin: 0;
+            }
+
+            .left {
+                font-size: 1.2rem;
+                text-align: center;
+                width: 100%;
+            }
+
+            .projects-section {
+                max-width: 90vw;
+                padding: 15px;
+            }
+
+            .projects-section h1 {
+                font-size: 2rem;
+                margin-bottom: 20px;
+            }
+
+            .project-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 20px;
+            }
+
+            .project-card {
+                padding: 20px;
+            }
+
+            .project-card h2 {
+                font-size: 1.2rem;
+            }
+
+            .project-card p {
+                font-size: 0.95rem;
+            }
+
+            .project-card .tech-stack span {
+                font-size: 0.8rem;
+                padding: 4px 8px;
+            }
+
+            .project-links a {
+                font-size: 0.9rem;
+                padding: 8px 12px;
+            }
+
+            .footer {
+                flex-direction: column;
+                padding: 20px 20px;
+                text-align: center;
+            }
+
+            .footer ul {
+                align-items: center;
+                margin-top: 15px;
+            }
+
+            .footer > div {
+                margin: 10px 0;
+            }
+        }
+
+        /* For screens smaller than 480px (e.g., mobile phones) */
+        @media screen and (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+
+            .projects-section h1 {
+                font-size: 1.8rem;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr; /* Single column on very small screens */
+                padding: 10px 0;
+            }
+
+            .project-card {
+                padding: 15px;
+            }
+
+            .project-card h2 {
+                font-size: 1.1rem;
+            }
+
+            .project-card p {
+                font-size: 0.85rem;
+            }
+
+            .project-card .tech-stack span {
+                font-size: 0.7rem;
+                padding: 3px 6px;
+            }
+
+            .project-links a {
+                font-size: 0.8rem;
+                padding: 6px 10px;
+            }
+
+            .footer .footer-first h3 {
+                font-size: 1.2rem;
+            }
+
+            .footer ul li a {
+                font-size: 0.9rem;
+            }
+
+            footer .footer-rights {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="left">Shivam's Portfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="projects-section">
+            <h1>My Projects</h1>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h2>StudEase</h2>
+                    <p>A responsive educational platform built for my college to promote online education, providing easy access to study materials and resources.</p>
+                    <div class="tech-stack">
+                        <span>React.js</span>
+                        <span>JavaScript</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://edustores.netlify.app/home" target="_blank">Live Demo</a>
+                        <a href="https://github.com/shivamkumarjha03/edustore" target="_blank">GitHub</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h2>Adventure</h2>
+                    <p>A responsive website for travel agency providing information about the places to visit in India.</p>
+                    <div class="tech-stack">
+                        <span>React.js</span>
+                        <span>JavaScript</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://illustrious-lokum-ad3056.netlify.app/" target="_blank">Live Demo</a>
+                        <a href="https://github.com/shivamkumarjha03/Adventure" target="_blank">GitHub</a>
+                    </div>
+                </div>
+                <!-- Add more project cards as needed -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer">
+        <div class="footer-first">
+            <h3>Shivam's Developer Portfolio</h3>
+        </div>
+        <div class="footer-second">
+<ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Me</a></li>
+    <li><a href="contact.html">Contact Me</a></li>
+    
+</ul>
+        </div>
+        
+        </div>
+        <div class="footer-rights">
+            &#169; shivamportfolio.com | All rights reserved
+        </div>
+    </footer>
+    <script>
+        // Function to handle page sequence
+        function startPageSequence() {
+            // Get current page name
+            const currentPage = window.location.pathname.split('/').pop();
+            
+            // Define the sequence of pages
+            const pageSequence = {
+                'index.html': 'about.html',
+                'about.html': 'projects.html',
+                'projects.html': 'contact.html',
+                'contact.html': 'index.html'  // Loop back to home
+            };
+
+            // If we're on a page in the sequence, redirect to the next page after 5 seconds
+            if (pageSequence[currentPage]) {
+                setTimeout(() => {
+                    window.location.href = pageSequence[currentPage];
+                }, 5000);  // 5000 milliseconds = 5 seconds
+            }
+        }
+
+        // Start the sequence when the page loads
+        window.onload = startPageSequence;
+    </script>
+</body>
+</html> 

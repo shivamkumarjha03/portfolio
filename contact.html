@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Shivam Kumar Jha</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+           margin: 0; 
+           padding: 0;
+        }
+        body {
+            background-color: white;
+            color: goldenrod;
+            font-family: 'Poppins', sans-serif;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80px;
+            background-color: rgb(30, 30, 30);
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            list-style: none;
+            margin: 0 23px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: goldenrod;
+        }
+        nav ul li a:hover {
+            color: darkgoldenrod;
+            font-size: 1.05rem;
+        }
+        .left {
+            font-size: 1.5rem;
+        }
+        .contact-section {
+            max-width: 80vw;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        .contact-section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: darkgoldenrod;
+            text-align: center;
+        }
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .contact-info {
+            padding: 20px;
+        }
+        .contact-info h2 {
+            color: darkgoldenrod;
+            margin-bottom: 20px;
+        }
+        .contact-info p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        .social-links {
+            margin-top: 30px;
+        }
+        .social-links a {
+            color: goldenrod;
+            text-decoration: none;
+            margin-right: 20px;
+            font-size: 1.2rem;
+        }
+        .contact-form {
+            background-color: rgb(30, 30, 30);
+            padding: 30px;
+            border-radius: 10px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: white;
+            color: goldenrod;
+        }
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        .submit-btn {
+            background-color: goldenrod;
+            color: black;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        .submit-btn:hover {
+            background-color: darkgoldenrod;
+        }
+        footer{
+            background-color: rgb(30, 30, 30);
+            border-radius: 15px;
+            padding: 20px 0;
+        }
+        .footer{
+            display: flex;
+            padding: 20px 122px;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .footer ul{
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0;
+            margin: 0;
+        }
+        .footer ul li{
+            list-style: none;
+            margin: 5px 0;
+        }
+        .footer ul li a{
+            text-decoration: none;
+            color: goldenrod;
+        }
+        .footer ul li a:hover{
+            color: darkgoldenrod;
+            font-size: 1.05rem;
+        }
+        .footer-first h3{
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            line-height: 1.2;
+        }
+        .footer>div{
+            margin: 10px 20px;
+        }
+        footer .footer-rights{
+            text-align: center;
+            color: goldenrod;
+            padding: 12px 0;
+            margin-top: 20px;
+        }
+
+        /* --- Media Queries for Responsiveness --- */
+
+        /* For screens smaller than 768px (e.g., tablets and smaller) */
+        @media screen and (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+                margin-top: 10px;
+                gap: 10px;
+            }
+
+            nav ul li {
+                margin: 0;
+            }
+
+            .left {
+                font-size: 1.2rem;
+                text-align: center;
+                width: 100%;
+            }
+
+            .contact-section {
+                max-width: 90vw;
+                padding: 15px;
+            }
+
+            .contact-section h1 {
+                font-size: 2rem;
+                margin-bottom: 20px;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .contact-info {
+                padding: 0;
+            }
+
+            .contact-info h2 {
+                font-size: 1.5rem;
+            }
+
+            .social-links {
+                margin-top: 20px;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .social-links a {
+                margin: 5px 10px;
+            }
+
+            .contact-form {
+                padding: 20px;
+            }
+
+            .form-group label {
+                font-size: 0.95rem;
+            }
+
+            .form-group input, .form-group textarea {
+                padding: 8px;
+                font-size: 0.9rem;
+            }
+
+            .submit-btn {
+                font-size: 0.95rem;
+                padding: 10px 20px;
+            }
+
+            .footer {
+                flex-direction: column;
+                padding: 20px 20px;
+                text-align: center;
+            }
+
+            .footer ul {
+                align-items: center;
+                margin-top: 15px;
+            }
+
+            .footer > div {
+                margin: 10px 0;
+            }
+        }
+
+        /* For screens smaller than 480px (e.g., mobile phones) */
+        @media screen and (max-width: 480px) {
+            body {
+                font-size: 13px;
+            }
+
+            .contact-section h1 {
+                font-size: 1.8rem;
+            }
+
+            .contact-info h2 {
+                font-size: 1.3rem;
+            }
+
+            .social-links a {
+                font-size: 1rem;
+                margin: 5px;
+            }
+
+            .form-group input, .form-group textarea {
+                font-size: 0.85rem;
+            }
+
+            .submit-btn {
+                width: 100%;
+                padding: 8px 15px;
+            }
+
+            .footer .footer-first h3 {
+                font-size: 1.2rem;
+            }
+
+            .footer ul li a {
+                font-size: 0.9rem;
+            }
+
+            footer .footer-rights {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="left">Shivam's Portfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="contact-section">
+            <h1>Contact Me</h1>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <p>Feel free to reach out to me for any questions or opportunities. I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/shivamkumarjha03" target="_blank">GitHub</a>
+                        <a href="https://www.linkedin.com/in/shivam-kumar-jha-15aa8b1a8/" target="_blank">LinkedIn</a>
+                        <a href="mailto:jhashivamkumar045@gmail.com">Email</a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form action="mailto:jhashivamkumar045@gmail.com?subject=Message%20from%20Portfolio" method="get" enctype="text/plain">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            <div id="thankYouMessage" style="display:none; color: rgb(171, 94, 243); margin-top: 20px;">
+                Thank you for your message!
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer">
+            <div class="footer-first">
+                <h3>Shivam's Developer Portfolio</h3>
+            </div>
+            <div class="footer-second">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="contact.html">Contact Me</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-rights">
+            &#169; shivamportfolio.com | All rights reserved
+        </div>
+    </footer>
+    <script>
+        // Function to handle page sequence
+        function startPageSequence() {
+            // Get current page name
+            const currentPage = window.location.pathname.split('/').pop();
+            
+            // Define the sequence of pages
+            const pageSequence = {
+                'index.html': 'about.html',
+                'about.html': 'projects.html',
+                'projects.html': 'contact.html',
+                'contact.html': 'index.html'  // Loop back to home
+            };
+
+            // If we're on a page in the sequence, redirect to the next page after 5 seconds
+            if (pageSequence[currentPage]) {
+                setTimeout(() => {
+                    window.location.href = pageSequence[currentPage];
+                }, 5000);  // 5000 milliseconds = 5 seconds
+            }
+        }
+
+        // Start the sequence when the page loads
+        window.onload = startPageSequence;
+    </script>
+</body>
+</html> 

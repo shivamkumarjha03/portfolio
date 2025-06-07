@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Shivam Kumar Jha</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+           margin: 0; 
+           padding: 0;
+        }
+        body {
+            background-color: white;
+            color: goldenrod;
+            font-family: 'Poppins', sans-serif;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80px;
+            background-color: rgb(30, 30, 30);
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            list-style: none;
+            margin: 0 23px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: goldenrod;
+        }
+        nav ul li a:hover {
+            color: darkgoldenrod;
+            font-size: 1.05rem;
+        }
+        .left {
+            font-size: 1.5rem;
+        }
+        .about-section {
+            max-width: 80vw;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        .about-section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: darkgoldenrod;
+        }
+        .about-section p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .skills {
+            margin-top: 30px;
+        }
+        .skills h2 {
+            color: darkgoldenrod;
+            margin-bottom: 15px;
+        }
+        .skills ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .skills li {
+            background-color: rgb(30, 30, 30);
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .skill-buttons {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .skill-btn {
+            padding: 10px 20px;
+            background-color: rgb(30, 30, 30);
+            color: goldenrod;
+            border: 1px solid goldenrod;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .skill-btn:hover {
+            background-color: goldenrod;
+            color: black;
+        }
+
+        .skill-btn.active {
+            background-color: #f1a95e;
+            color: white;
+            border-color: #f1a95e;
+        }
+
+        /* New styles for skill cards */
+        .skill-card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px; /* Spacing between cards */
+            padding: 20px 0;
+        }
+
+        .skill-card {
+            background-color: white;
+            border-radius: 15px; /* More rounded corners */
+            padding: 25px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px); /* Slight lift on hover */
+        }
+
+        .skill-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(241, 169, 94, 0.2); /* Light orange background for icon */
+            border-radius: 12px; /* Rounded corners for icon background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5px;
+        }
+
+        .skill-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: saturate(1.5) brightness(0.8) contrast(1.2); /* Adjust icon color/brightness if needed */
+        }
+
+        .skill-info h3 {
+            font-size: 1.4rem;
+            color: #333; /* Darker text for skill name */
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .skill-percentage {
+            font-size: 1rem;
+            color: #f1a95e; /* Orange color for percentage */
+            font-weight: 600;
+        }
+
+        .skill-description {
+            font-size: 0.95rem;
+            color: #555; /* Darker text for description */
+            line-height: 1.5;
+            flex-grow: 1; /* Allow description to take available space */
+        }
+
+        .skill-progress-bar {
+            width: 100%;
+            height: 8px;
+            background-color: #eee; /* Light gray track */
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: #f1a95e; /* Orange fill */
+            border-radius: 4px;
+            transition: width 0.5s ease-in-out;
+        }
+
+        footer{
+            background-color: rgb(30, 30, 30);
+            border-radius: 15px;
+            padding: 20px 0;
+        }
+        .footer{
+            display: flex;
+            padding: 20px 122px;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .footer ul{
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0;
+            margin: 0;
+        }
+        .footer ul li{
+            list-style: none;
+            margin: 5px 0;
+        }
+        .footer ul li a{
+            text-decoration: none;
+            color: goldenrod;
+        }
+        .footer ul li a:hover{
+            color: darkgoldenrod;
+            font-size: 1.05rem;
+        }
+        .footer-first h3{
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            line-height: 1.2;
+        }
+        .footer>div{
+            margin: 10px 20px;
+        }
+        footer .footer-rights{
+            text-align: center;
+            color: goldenrod;
+            padding: 12px 0;
+            margin-top: 20px;
+        }
+
+        /* --- Media Queries for Responsiveness --- */
+
+        /* For screens smaller than 768px (e.g., tablets and smaller) */
+        @media screen and (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+                margin-top: 10px;
+                gap: 10px;
+            }
+
+            nav ul li {
+                margin: 0;
+            }
+
+            .left {
+                font-size: 1.2rem;
+                text-align: center;
+                width: 100%;
+            }
+
+            .about-section {
+                max-width: 90vw;
+                padding: 15px;
+            }
+
+            .about-section h1 {
+                font-size: 2rem;
+                margin-bottom: 15px;
+            }
+
+            .about-section p {
+                font-size: 1rem;
+            }
+
+            .skill-buttons {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .skill-btn {
+                font-size: 0.9rem;
+                padding: 8px 15px;
+            }
+
+            .skill-card-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+            }
+
+            .skill-card {
+                padding: 20px;
+            }
+
+            .skill-info h3 {
+                font-size: 1.2rem;
+            }
+
+            .skill-percentage {
+                font-size: 0.9rem;
+            }
+
+            .skill-description {
+                font-size: 0.85rem;
+            }
+
+            .footer {
+                flex-direction: column;
+                padding: 20px 20px;
+                text-align: center;
+            }
+
+            .footer ul {
+                align-items: center;
+                margin-top: 15px;
+            }
+
+            .footer > div {
+                margin: 10px 0;
+            }
+        }
+
+        /* For screens smaller than 480px (e.g., mobile phones) */
+        @media screen and (max-width: 480px) {
+            body {
+                font-size: 13px;
+            }
+
+            .about-section h1 {
+                font-size: 1.8rem;
+            }
+
+            .skill-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .skill-btn {
+                width: 90%;
+                max-width: 250px;
+            }
+
+            .skill-card-grid {
+                grid-template-columns: 1fr; /* Single column on very small screens */
+                padding: 10px 0;
+            }
+
+            .skill-card {
+                padding: 15px;
+            }
+
+            .skill-info h3 {
+                font-size: 1.1rem;
+            }
+
+            .skill-percentage {
+                font-size: 0.8rem;
+            }
+
+            .skill-description {
+                font-size: 0.75rem;
+            }
+
+            .footer .footer-first h3 {
+                font-size: 1.2rem;
+            }
+
+            .footer ul li a {
+                font-size: 0.9rem;
+            }
+
+            footer .footer-rights {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="left">Shivam's Portfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="about-section">
+            <h1>About Me</h1>
+            <p>I am Shivam Kumar Jha, an aspiring software developer passionate about creating innovative solutions. I love to learn new technologies and solve complex problems.</p>
+            <p>With a strong foundation in programming and a keen eye for detail, I strive to build efficient and user-friendly applications.</p>
+            
+            <div class="skills">
+                <h2>Skills</h2>
+                <div class="skill-buttons">
+                    <button class="skill-btn active" onclick="showSkills('all')">All</button>
+                    <button class="skill-btn" onclick="showSkills('frontend')">Frontend</button>
+                    <button class="skill-btn" onclick="showSkills('coding-languages')">Coding Languages</button>
+                    <button class="skill-btn" onclick="showSkills('database')">Database</button>
+                    <button class="skill-btn" onclick="showSkills('tools')">Tools</button>
+                    <button class="skill-btn" onclick="showSkills('dsa')">DSA</button>
+                    <button class="skill-btn" onclick="showSkills('soft')">Soft Skills</button>
+                </div>
+                
+                <div id="frontendSkillsContent" class="skill-card-grid">
+                    <div class="skill-card">
+                        <div class="skill-info">
+                            <h3>HTML<span class="skill-percentage">90%</span></h3>
+                            <div class="skill-progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
+                            <p class="skill-description">Proficient in structuring web content with semantic HTML5.</p>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-info">
+                            <h3>CSS<span class="skill-percentage">85%</span></h3>
+                            <div class="skill-progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
+                            <p class="skill-description">Skilled in styling and responsive design using CSS3 and preprocessors.</p>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-info">
+                            <h3>JavaScript<span class="skill-percentage">80%</span></h3>
+                            <div class="skill-progress-bar"><div class="progress-fill" style="width: 80%;"></div></div>
+                            <p class="skill-description">Experienced in dynamic web interactions and modern JavaScript (ES6+).</p>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-info">
+                            <h3>React.js<span class="skill-percentage">75%</span></h3>
+                            <div class="skill-progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
+                            <p class="skill-description">Building interactive user interfaces with React, including hooks and component-based architecture.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="codingLanguagesContent" class="skill-card-grid" style="display:none;">
+                    <div class="skill-card">
+                        <div class="skill-info">
+                            <h3>C<span class="skill-percentage">70%</span></h3>
+                            <div class="skill-progress-bar"><div class="progress-fill" style="width: 70%;"></div></div>
+                            <p class="skill-description">Foundational knowledge in C programming for system-level development.</p>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-info">
+                            <h3>Java<span class="skill-percentage">80%</span></h3>
+                            <div class="skill-progress-bar"><div class="progress-fill" style="width: 80%;"></div></div>
+                            <p class="skill-description">Strong grasp of object-oriented programming with Java.</p>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-info">
+                            <h3>OOPs<span class="skill-percentage">85%</span></h3>
+                            <div class="skill-progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
+                            <p class="skill-description">Proficient in Object-Oriented Programming principles and concepts.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="databaseSkillsContent" class="skill-card-grid" style="display:none;">
+                    <div class="skill-card">
+                        <div class="skill-info">
+                            <h3>SQL<span class="skill-percentage">85%</span></h3>
+                            <div class="skill-progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
+                            <p class="skill-description">Proficient in database query languages and relational database management.</p>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-info">
+                            <h3>DBMS<span class="skill-percentage">75%</span></h3>
+                            <div class="skill-progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
+                            <p class="skill-description">Understanding of Database Management Systems concepts and design.</p>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-info">
+                            <h3>MongoDB<span class="skill-percentage">70%</span></h3>
+                            <div class="skill-progress-bar"><div class="progress-fill" style="width: 70%;"></div></div>
+                            <p class="skill-description">Experience with NoSQL databases, including MongoDB operations.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="toolsSkillsContent" class="skill-card-grid" style="display:none;">
+                    <div class="skill-card">
+                        <div class="skill-info">
+                            <h3>Git and GitHub<span class="skill-percentage">90%</span></h3>
+                            <div class="skill-progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
+                            <p class="skill-description">Proficient in version control using Git and collaborative workflows on GitHub.</p>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-info">
+                            <h3>Redux Toolkit<span class="skill-percentage">70%</span></h3>
+                            <div class="skill-progress-bar"><div class="progress-fill" style="width: 70%;"></div></div>
+                            <p class="skill-description">Managing application state efficiently with Redux Toolkit.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="dsaSkillsContent" class="skill-card-grid" style="display:none;">
+                    <div class="skill-card">
+                        <div class="skill-info">
+                            <h3>Data Structures and Algorithms<span class="skill-percentage">80%</span></h3>
+                            <div class="skill-progress-bar"><div class="progress-fill" style="width: 80%;"></div></div>
+                            <p class="skill-description">Solid understanding of fundamental data structures and algorithms for efficient problem-solving.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="softSkillsContent" style="display:none;" class="skill-card-grid">
+                    <div class="skill-card">
+                        <div class="skill-info">
+                            <h3>Communication<span class="skill-percentage">90%</span></h3>
+                            <div class="skill-progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
+                            <p class="skill-description">Effective verbal and written communication skills for clear interaction.</p>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-info">
+                            <h3>Teamwork<span class="skill-percentage">85%</span></h3>
+                            <div class="skill-progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
+                            <p class="skill-description">Collaborative approach to achieve common goals and contribute to team success.</p>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-info">
+                            <h3>Problem-solving<span class="skill-percentage">88%</span></h3>
+                            <div class="skill-progress-bar"><div class="progress-fill" style="width: 88%;"></div></div>
+                            <p class="skill-description">A strong ability to analyze complex issues and develop effective solutions.</p>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-info">
+                            <h3>Adaptability<span class="skill-percentage">92%</span></h3>
+                            <div class="skill-progress-bar"><div class="progress-fill" style="width: 92%;"></div></div>
+                            <p class="skill-description">Quick to learn new technologies and adjust to changing project requirements.</p>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-info">
+                            <h3>Time Management<span class="skill-percentage">87%</span></h3>
+                            <div class="skill-progress-bar"><div class="progress-fill" style="width: 87%;"></div></div>
+                            <p class="skill-description">Efficiently prioritizing tasks and meeting deadlines in a dynamic environment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer">
+        <div class="footer-first">
+            <h3>Shivam's Developer Portfolio</h3>
+        </div>
+        <div class="footer-second">
+<ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Me</a></li>
+    <li><a href="contact.html">Contact Me</a></li>
+    
+</ul>
+        </div>
+        
+        </div>
+        <div class="footer-rights">
+            &#169; shivamportfolio.com | All rights reserved
+        </div>
+    </footer>
+    <script>
+        function showSkills(skillType) {
+            const allSkillContents = document.querySelectorAll('.skill-card-grid');
+            const allSkillButtons = document.querySelectorAll('.skill-btn');
+
+            allSkillContents.forEach(content => {
+                content.style.display = 'none';
+            });
+            allSkillButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            if (skillType === 'all') {
+                allSkillContents.forEach(content => {
+                    content.style.display = 'grid';
+                });
+            } else if (skillType === 'frontend') {
+                document.getElementById('frontendSkillsContent').style.display = 'grid';
+            } else if (skillType === 'coding-languages') {
+                document.getElementById('codingLanguagesContent').style.display = 'grid';
+            } else if (skillType === 'database') {
+                document.getElementById('databaseSkillsContent').style.display = 'grid';
+            } else if (skillType === 'tools') {
+                document.getElementById('toolsSkillsContent').style.display = 'grid';
+            } else if (skillType === 'dsa') {
+                document.getElementById('dsaSkillsContent').style.display = 'grid';
+            } else if (skillType === 'soft') {
+                document.getElementById('softSkillsContent').style.display = 'grid';
+            }
+            document.querySelector(`.skill-btn[onclick*="${skillType}"]`).classList.add('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showSkills('all'); // Display all skills by default
+        });
+
+        // Function to handle page sequence
+        function startPageSequence() {
+            // Get current page name
+            const currentPage = window.location.pathname.split('/').pop();
+            
+            // Define the sequence of pages
+            const pageSequence = {
+                'index.html': 'about.html',
+                'about.html': 'projects.html',
+                'projects.html': 'contact.html',
+                'contact.html': 'index.html'  // Loop back to home
+            };
+
+            // If we're on a page in the sequence, redirect to the next page after 5 seconds
+            if (pageSequence[currentPage]) {
+                setTimeout(() => {
+                    window.location.href = pageSequence[currentPage];
+                }, 5000);  // 5000 milliseconds = 5 seconds
+            }
+        }
+
+        // Start the sequence when the page loads
+        window.onload = startPageSequence;
+    </script>
+</body>
+</html> 
